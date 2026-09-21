@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ==============================
+     Colors
+  ============================== */
+
+  --bg: #09070d;
+  --bg-soft: #100c17;
+  --panel: #15101d;
+
+  --purple-deep: #3d1f6b;
+  --purple: #8b5cf6;
+  --purple-bright: #a78bfa;
+  --pink-purple: #c084fc;
+
+  --text: #f5f3ff;
+  --text-dim: #aaa2bc;
+  --text-mute: #6f667d;
+
+  --line: rgba(167, 139, 250, 0.14);
+
+  /* ==============================
+     Fonts
+  ============================== */
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+
+/* ==============================
+   Reset
+============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   Base
+============================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background: var(--bg);
+  color: var(--text);
+
+  font-family: var(--font-body), sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  isolation: isolate;
+}
+
+
+/* ==============================
+   Selection
+============================== */
+
+::selection {
+  background: rgba(139, 92, 246, 0.35);
+  color: #ffffff;
+}
+
+
+/* ==============================
+   Background Mesh
+============================== */
+
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-mesh::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  top: -300px;
+  left: -200px;
+
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.22) 0%,
+    rgba(61, 31, 107, 0.08) 45%,
+    transparent 70%
+  );
+
+  filter: blur(10px);
+}
+
+.bg-mesh::after {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  right: -150px;
+  bottom: -250px;
+
+  background: radial-gradient(
+    circle,
+    rgba(192, 132, 252, 0.14) 0%,
+    rgba(61, 31, 107, 0.06) 45%,
+    transparent 70%
+  );
+}
+
+
+/* ==============================
+   Background Grain
+============================== */
+
+.bg-grain {
+  position: fixed;
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+/* ==============================
+   Gradient Text
+============================== */
+
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--purple-bright),
+    var(--pink-purple)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* ==============================
+   Animated Border
+============================== */
+
+.border-beam {
+  position: absolute;
+  inset: -1px;
+
+  border-radius: 16px;
+  padding: 1px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(167, 139, 250, 0.5),
+    transparent
+  );
+
+  background-size: 200% 200%;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+
+  pointer-events: none;
+}
+
+
+/* ==============================
+   Header
+============================== */
+
+.header-scrolled {
+  background: rgba(9, 7, 13, 0.82);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.28);
+}
+
+/* ==============================
+   Skill Card Glow
+============================== */
+
+.skill-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.skill-glow::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    220px circle at var(--x, 50%) var(--y, 50%),
+    rgba(139, 92, 246, 0.16),
+    transparent 65%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+.skill-glow:hover::before {
+  opacity: 1;
+}
+
+
+/* ==============================
+   Accessibility
+============================== */
+
+:focus-visible {
+  outline: 2px solid var(--purple-bright);
+  outline-offset: 4px;
+}
+
+
+/* ==============================
+   Reduced Motion
+============================== */
+
+@keyframes 
+  scroll-x { 
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } 
+  } 
+  .animate-scroll-x {
+    animation: scroll-x 24s linear infinite; 
+  }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-scroll-x {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
