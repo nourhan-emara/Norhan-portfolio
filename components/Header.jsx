@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "@/lib/gsap";
 import useMagnetic from "@/hooks/useMagnetic";
+import Link from "next/link";
 
 const links = [
   { href: "#about", label: "About" },
@@ -55,14 +56,17 @@ export default function Header() {
         aria-label="Main navigation"
       >
         {/* Logo */}
-        <a
-          href="/"
-          className="font-mono text-[15px] tracking-wide text-purple-bright transition-opacity duration-300 hover:opacity-80"
-          aria-label="Norhan - Home"
-        >
-          Norhan<span className="text-text-mute">.dev</span>
-        </a>
-
+        <Link
+  href="/"
+  aria-label="Norhan Portfolio"
+  className="inline-flex items-center"
+>
+  <img
+    src="/logo-header1.png"
+    alt="Norhan"
+    className="h-11 w-auto object-contain sm:h-12"
+  />
+</Link>
         {/* Desktop Navigation */}
         <ul className="hidden items-center gap-9 text-sm text-text-dim md:flex">
           {links.map((link) => (

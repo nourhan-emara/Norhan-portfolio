@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { Github, Mail } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa";
 import useReveal from "@/hooks/useReveal";
 import useMagnetic from "@/hooks/useMagnetic";
 
@@ -122,6 +123,65 @@ export default function Contact() {
                 "
               >
                 GitHub
+              </span>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/noorhan-mahmoud/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="
+                group
+                relative
+                flex
+                h-11
+                w-11
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-line
+                text-text-mute
+                transition-all
+                duration-300
+                hover:border-purple
+                hover:bg-purple/10
+                hover:text-purple-bright
+                hover:shadow-[0_0_25px_rgba(139,92,246,0.2)]
+              "
+            >
+              <FaLinkedinIn size={19} strokeWidth={1.7} />
+
+              {/* Tooltip */}
+              <span
+                className="
+                  pointer-events-none
+                  absolute
+                  bottom-full
+                  left-1/2
+                  mb-2
+                  -translate-x-1/2
+                  scale-0
+                  whitespace-nowrap
+                  rounded-md
+                  border
+                  border-line
+                  bg-panel
+                  px-2
+                  py-1
+                  font-mono
+                  text-[10px]
+                  text-text
+                  opacity-0
+                  transition-all
+                  duration-200
+                  group-hover:scale-100
+                  group-hover:opacity-100
+                "
+              >
+                LinkedIn
               </span>
             </a>
 

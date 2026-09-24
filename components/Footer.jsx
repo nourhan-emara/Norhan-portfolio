@@ -1,6 +1,7 @@
 "use client";
 
 import { Github, Mail, ArrowUp } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -39,6 +40,16 @@ export default function Footer() {
               className="group flex h-10 w-10 items-center justify-center rounded-full border border-line text-text-mute transition-all duration-300 hover:border-purple hover:bg-purple/10 hover:text-purple-bright hover:shadow-[0_0_22px_rgba(139,92,246,0.2)]"
             >
               <Github size={17} strokeWidth={1.7} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/noorhan-mahmoud/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="group flex h-10 w-10 items-center justify-center rounded-full border border-line text-text-mute transition-all duration-300 hover:border-purple hover:bg-purple/10 hover:text-purple-bright hover:shadow-[0_0_22px_rgba(139,92,246,0.2)]"
+            >
+              <FaLinkedinIn size={17} strokeWidth={1.7} />
             </a>
 
             <a
