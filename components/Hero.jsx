@@ -343,20 +343,28 @@ export default function Hero() {
 
           {/* CTA */}
           <div className="hero-cta mt-7 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="magnetic inline-block rounded-[10px] bg-gradient-to-br from-purple to-[#6D28D9] px-7 py-[14px] font-mono text-sm text-white shadow-[0_8px_30px_rgba(139,92,246,0.35)] transition-all duration-300 hover:shadow-[0_10px_35px_rgba(139,92,246,0.45)]"
-            >
-              View My Work
-            </a>
+  <a
+    href="#projects"
+    className="magnetic inline-block rounded-[10px] bg-gradient-to-br from-purple to-[#6D28D9] px-7 py-[14px] font-mono text-sm text-white shadow-[0_8px_30px_rgba(139,92,246,0.35)] transition-all duration-300 hover:shadow-[0_10px_35px_rgba(139,92,246,0.45)]"
+  >
+    View My Work
+  </a>
 
-            <a
-              href="#contact"
-              className="magnetic inline-block rounded-[10px] border border-line px-7 py-[14px] font-mono text-sm text-text-dim transition-all duration-300 hover:border-purple hover:text-text"
-            >
-              Get In Touch
-            </a>
-          </div>
+  <a
+    href="/Norhan-Mahmoud-CV.pdf"
+    download
+    className="magnetic inline-block rounded-[10px] border border-line px-7 py-[14px] font-mono text-sm text-text-dim transition-all duration-300 hover:border-purple hover:text-text"
+  >
+    Download CV
+  </a>
+
+  <a
+    href="#contact"
+    className="magnetic inline-block rounded-[10px] border border-line px-7 py-[14px] font-mono text-sm text-text-dim transition-all duration-300 hover:border-purple hover:text-text"
+  >
+    Get In Touch
+  </a>
+</div>
 
           {/* Stats */}
           <div className="mt-12 flex flex-wrap gap-x-6 gap-y-5 sm:mt-14 sm:gap-x-[34px]">
